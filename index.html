@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./api.css">
+       
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jqueryrouter@2.2.11/dist/js/jquery.router.min.js"></script>
+        <title>Git Api Search</title>
+    </head>
+     <body>
+        <script type="text/javascript" src="./api.js"></script>
+        
+        <header>
+           
+                <div class="format">
+                    <img class="logo" src='./apigit/git3.png'> 
+    
+                   
+                </div>
+        
+        </header>
+            <section class="background">
+
+                <p class= "titulo">Explore repositórios <br> no Github</p>
+                
+                <div class="grid">
+                    <input class="w3-input w3-animate-input" type="text" style="width:30%"  placeholder="Buscador do Git" id="name">
+
+                    
+                    <button class="button-search"  onclick="buscaUsuario()"><img width="25px"
+                     
+                        
+                        src="./apigit/Search.png" alt=""></button>
+
+                 </div>
+
+        </section>
+        <section>
+            <div id="usuario_n_encontrado" style="border: 1px solid red; display: none;"></div>
+            <div class="teste" id="usuario" style="border: 1px solid red; display: none;">
+                
+               
+                <label>Número de seguidores: </label>
+                <input type="text" id="usuario_numSeguidores"/>
+                <br>
+                <label>Número de seguidos: </label>
+                <input type="text" id="usuario_numSeguidos"/>
+                <br>
+                <label>Imagem do avatar: </label>
+                <img id="img_avatar"/>
+                <br>
+                <label>E-mail: </label>
+                <p id="e-mail_usuario"></p>
+                <br>
+                <label>Bio: </label>
+                <p id="bio_usuario"></p>
+                <br>
+
+                <select id="sort_repos" onchange="buscaUsuario()">
+                    <option value="star" selected="selected">Estrelas</option>
+                    <option value="created">Data de criação</option>
+                    <option value="updated">Data de atualização</option>
+                    <option value="pushed">Data de Push</option>
+                </select>
+                <select id="direction_repos" onchange="buscaUsuario()">
+                    <option value="asc">Asc</option>
+                    <option value="desc" selected="selected">Desc</option>
+                </select>
+                
+                <br/>
+                <div id="lista_repositorios">
+                    <label>Listagem de Repositórios: </label>
+                    <p id="repositorio_usuario"></p>
+                    <br>
+                </div>
+
+            </div>
+
+        </section>
+    </body>
+
+</html> 
+
+
+
