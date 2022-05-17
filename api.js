@@ -16,11 +16,11 @@ function buscaUsuario() {
             $('#usuario').css('display','block');      
             $('#usuario_n_encontrado').css('display','none');
 
-            $('#usuario_numSeguidores').val(response.followers);
-            $('#usuario_numSeguidos').val(response.following);
+            $('#usuario_numSeguidores').text(response.followers);
+            $('#usuario_numSeguidos').text(response.following);
             $('#img_avatar').attr('src', response.avatar_url);
             $('#E-mail').text(response.email_usuario);
-            $('#Bio').val(response.bio_usuario);
+            $('#Bio').text(response.bio_usuario);
         },
         error:function(){
            $('#usuario_n_encontrado').text("Não foi encontrado");           
@@ -87,7 +87,7 @@ function buscaRepositorio() {
            console.log(response) 
            
 
-            $('#nome_repositorio').val(response.name);
+            $('#nome_repositorio').text(response.name);
             $('#descricao_repositorio').val(response.description);
             $('#link_repositorio').attr('href', response.html_url);
             $('#numero_de_estrelas_repositorio').val(response.stargazers_count);
